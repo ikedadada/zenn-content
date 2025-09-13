@@ -5,7 +5,7 @@
   "scripts": {
     "preview": "zenn preview",
     "new:article": "zenn new:article",
-    "fmt": "prettier --write \"**/*.{md,mdx}\"",
+    "fmt": "prettier --write \"articles/*.{md,mdx}\"",
     "lint:md": "markdownlint articles/*.md --ignore node_modules",
     "lint:text": "textlint \"articles/*.md\"",
     "lint": "npm run lint:md && npm run lint:text"
