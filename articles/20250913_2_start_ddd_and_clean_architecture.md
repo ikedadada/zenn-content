@@ -81,23 +81,38 @@ DDDやクリーンアーキテクチャを実現することにより、ビジ�
 
 - 全件取得
 - 1件取得
-- 新規作成
-- 上書き更新
+- 新規作成（作成時にはTODOは未完了）
+- 上書き更新（完了フラグは変更不可）
 - 削除
 - 完了フラグを立てる
 - 完了フラグを外す
+  - 完了フラグの一貫性がTODOの性質上重要であるため、完了フラグの更新は専用のユースケースで実装
 
 ### エンドポイント
 
-- GET /todos/: 全件取得。200でTodo[]を返す。
-- GET /todos/{id}: 1件取得。200でTodo、存在しなければ404。
-- POST /todos/: 新規作成。入力: { title, description?
-  }。201で作成Todoを返却（idはサーバ生成、completed=false）。
-- PUT /todos/{id}: 上書き更新。入力: { title, description? }。200で更新後Todo、存在しなければ404。
-- DELETE /todos/{id}: 削除。204 No Content、存在しなければ404。
-- PUT
-  /todos/{id}/complete: 完了フラグを立てる。200で更新後Todo、既に完了なら409、存在しなければ404。
-- PUT /todos/{id}/uncomplete: 完了フラグを外す。200で更新後Todo、未完了なら409、存在しなければ404。
+- GET `/todos/`: 全件取得
+  - 200: Todo[]
+- GET `/todos/{id}`: 1件取得
+  - 200: Todo
+  - 404: Not Found
+- POST `/todos/`: 新規作成
+  - Body: { title, description? }
+  - 201: 作成Todo（idはサーバ生成、completed=false）
+- PUT `/todos/{id}`: 上書き更新
+  - Body: { title, description? }
+  - 200: 更新後Todo
+  - 404: Not Found
+- DELETE `/todos/{id}`: 削除
+  - 204: No Content
+  - 404: Not Found
+- PUT `/todos/{id}/complete`: 完了フラグを立てる
+  - 200: 更新後Todo
+  - 409: 既に完了
+  - 404: Not Found
+- PUT `/todos/{id}/uncomplete`: 完了フラグを外す
+  - 200: 更新後Todo
+  - 409: 未完了
+  - 404: Not Found
 
 ### インフラ方針
 
