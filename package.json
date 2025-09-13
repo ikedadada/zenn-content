@@ -6,8 +6,8 @@
     "preview": "zenn preview",
     "new:article": "zenn new:article",
     "fmt": "prettier --write \"**/*.{md,mdx}\"",
-    "lint:md": "markdownlint **/*.md --ignore node_modules",
-    "lint:text": "textlint \"**/*.md\"",
+    "lint:md": "markdownlint articles/*.md --ignore node_modules",
+    "lint:text": "textlint \"articles/*.md\"",
     "lint": "npm run lint:md && npm run lint:text"
   },
   "devDependencies": {

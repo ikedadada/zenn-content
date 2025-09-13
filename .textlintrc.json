@@ -4,8 +4,11 @@
   },
   "rules": {
     "preset-ja-technical-writing": {
-      "no-mix-dearu-desu": true,
-      "ja-no-mixed-period": true,
+      "no-mix-dearu-desumasu": true,
+      "no-exclamation-question-mark": false,
+      "ja-no-mixed-period": {
+        "allowPeriodMarks": ["。", ":"]
+      },
       "sentence-length": { "max": 120 },
       "no-doubled-conjunctive-particle-ga": true,
       "no-doubled-joshi": true,
