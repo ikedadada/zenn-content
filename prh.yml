@@ -1,0 +1,10 @@
+version: 1
+rules:
+  - expected: GitHub
+    patterns: [Github, github]
+  - expected: JavaScript
+    patterns: [Javascript, java script, Java Script]
+  - expected: TypeScript
+    patterns: [Typescript, type script]
+  - expected: Zenn
+    patterns: [zenn]

@@ -1,0 +1,8 @@
+pre-commit:
+  commands:
+    format:
+      glob: "**/*.{md,mdx}"
+      run: npm run fmt
+    lint:
+      glob: "**/*.{md,mdx}"
+      run: npm run lint

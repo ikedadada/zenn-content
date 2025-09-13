@@ -1,0 +1,19 @@
+{
+  "filters": {
+    "allowlist": { "allowlist": [] }
+  },
+  "rules": {
+    "preset-ja-technical-writing": {
+      "no-mix-dearu-desu": true,
+      "ja-no-mixed-period": true,
+      "sentence-length": { "max": 120 },
+      "no-doubled-conjunctive-particle-ga": true,
+      "no-doubled-joshi": true,
+      "max-ten": { "max": 3 },
+      "ja-no-successive-word": true
+    },
+    "prh": {
+      "rulePaths": ["./prh.yml"]
+    }
+  }
+}
