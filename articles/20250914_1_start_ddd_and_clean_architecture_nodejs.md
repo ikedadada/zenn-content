@@ -56,6 +56,9 @@ https://github.com/ikedadada/start-ddd-and-clean-architecture
 
 ポイントは「完了フラグの整合性はエンティティで守る」です。ユースケースやDBの都合で直接フラグをいじらないように、APIを絞っています。
 
+参考（GitHub埋め込み）
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/domain/model/todo.ts
+
 ## リポジトリ（ポート）
 
 ファイル: `src/domain/repository/todoRepository.ts`
@@ -70,6 +73,9 @@ https://github.com/ikedadada/start-ddd-and-clean-architecture
 
 :::
 
+参考（GitHub埋め込み）
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/domain/repository/todoRepository.ts
+
 ## ユースケース（アプリケーションサービス）
 
 場所: `src/application_service/usecase/*`
@@ -82,6 +88,10 @@ https://github.com/ikedadada/start-ddd-and-clean-architecture
 はエンティティの `markAsCompleted` を呼び、保存します。
 
 これにより「完了フラグの一貫性は常にユースケースを経由して担保する」という方針が徹底できます。
+
+参考（GitHub埋め込み）
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/application_service/usecase/updateTodoUsecase.ts
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/application_service/usecase/markAsCompletedTodoUsecase.ts
 
 ## インフラ（アダプタ）
 
@@ -96,6 +106,9 @@ https://github.com/ikedadada/start-ddd-and-clean-architecture
 
 結果として、ユースケースは「接続のことを知らずに」一連の操作を安全に実行できます。
 
+参考（GitHub埋め込み）
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/infrastructure/repository/context.ts
+
 ## プレゼンテーション（Web層）
 
 場所: `src/presentation`
@@ -106,6 +119,9 @@ https://github.com/ikedadada/start-ddd-and-clean-architecture
   - `routeNotFoundHandler.ts` は未定義ルートを404にする。
 
 ハンドラは「入出力の整形」に集中し、ビジネスルールはユースケースとドメインに任せます。
+
+参考（GitHub埋め込み）
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/presentation/handler/createTodoHandler.ts
 
 ## ルーティング（仕様準拠）
 
@@ -121,6 +137,9 @@ https://github.com/ikedadada/start-ddd-and-clean-architecture
   - PUT `/todos/:id/uncomplete`
 - Composition Root として、PrismaClient → ContextProvider → Repository → TransactionService →
   Usecase → Handler の順に依存を束ねる。
+
+参考（GitHub埋め込み）
+https://github.com/ikedadada/start-ddd-and-clean-architecture/blob/3456531209a9a6c58a91112ce24aee70a151250d/backend_nodejs/src/main.ts
 
 ## テスト
 
