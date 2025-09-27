@@ -17,7 +17,12 @@ APIをPython（FastAPI + SQLAlchemy + MySQL）で組むときのキーポイン�
 https://github.com/ikedadada/start-ddd-and-clean-architecture
 
 :::message
-SQLAlchemyの制限の影響が大きいため、Python版はNode.js版やGo版と比べてやや複雑になっています。とはいえ、ドメイン層の構造や依存方向は変わらないので、DDD＋クリーンアーキテクチャの本質的な部分は共通です。:::
+
+SQLAlchemyの制限の影響が大きいため、Python版はNode.js版やGo版と比べてやや複雑になっています。
+
+とはいえ、ドメイン層の構造や依存方向は変わらないので、DDD＋クリーンアーキテクチャの本質的な部分は共通です。
+
+:::
 
 以降は`backend_python/`配下を前提に説明します。
 
